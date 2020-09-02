@@ -1,0 +1,26 @@
+{
+  "name": "app",
+  "displayName": "app",
+  "expo": {
+    "name": "app",
+    "slug": "app",
+    "version": "0.4.3",
+    "scheme": "app",
+    "platforms": ["ios", "android", "web"],
+    "orientation": "portrait",
+    "assetBundlePatterns": ["**/*"],
+    "android": {
+      "package": "com.myapp",
+      "versionCode": 20000403
+    },
+    "splash": {
+      "backgroundColor": "#02BEB2",
+      "resizeMode": "contain",
+    },
+    "backgroundColor": "#02BEB2",
+    "primaryColor": "#02BEB2",
+    "web": {
+      "lang": "pt-br"
+    }
+  }
+}

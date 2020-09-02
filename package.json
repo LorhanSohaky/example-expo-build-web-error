@@ -1,0 +1,86 @@
+{
+  "name": "app",
+  "version": "0.4.3",
+  "main": "index.js",
+  "scripts": {
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "web": "expo start --web",
+    "build-web": "expo build:web",
+    "deploy-web": "npm run build-web && now -A now.json --prod --token $TOKEN",
+    "start": "react-native start",
+    "lint": "prettier-standard  \"*.+(js|jsx|json|css|md)\" \"+(src)/**/*.+(js|jsx|json|css|md)\" --check",
+    "lint:fix": "prettier-standard \"*.+(js|jsx|json|css|md)\" \"+(src)/**/*.+(js|jsx|json|css|md)\" --format --lint",
+    "test": "jest"
+  },
+  "lint-staged": {
+    "*.+(js|jsx|json|css|md|json)": [
+      "prettier-standard --lint",
+      "git add"
+    ],
+    "+(src)/**/*.+(js|jsx|json|css|md)": [
+      "prettier-standard --lint",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "dependencies": {
+    "@react-native-community/masked-view": "^0.1.9",
+    "@react-navigation/material-bottom-tabs": "^5.2.16",
+    "@react-navigation/material-top-tabs": "^5.2.16",
+    "@react-navigation/native": "^5.7.3",
+    "@react-navigation/stack": "^5.9.0",
+    "@sentry/browser": "^5.15.5",
+    "@sentry/react-native": "^1.4.1",
+    "axios": "^0.19.2",
+    "expo": "~37.0.3",
+    "expo-facebook": "~8.1.0",
+    "expo-image-manipulator": "^8.1.0",
+    "expo-image-picker": "^8.1.0",
+    "expo-updates": "~0.1.0",
+    "moment": "^2.25.1",
+    "react": "~16.9.0",
+    "react-dom": "~16.9.0",
+    "react-facebook-login": "^4.1.1",
+    "react-google-recaptcha": "^2.0.1",
+    "react-html-parser": "^2.0.2",
+    "react-input-mask": "^2.0.4",
+    "react-native": "~0.61.5",
+    "react-native-elements": "^1.2.7",
+    "react-native-gesture-handler": "^1.6.1",
+    "react-native-masked-text": "^1.13.0",
+    "react-native-paper": "^3.8.0",
+    "react-native-popup-menu": "^0.15.7",
+    "react-native-reanimated": "^1.7.1",
+    "react-native-safe-area-context": "^0.7.3",
+    "react-native-screens": "^2.2.0",
+    "react-native-tab-view": "^2.14.0",
+    "react-native-unimodules": "~0.9.0",
+    "react-native-vector-icons": "^6.6.0",
+    "react-native-web": "~0.11.7",
+    "react-native-web-refresh-control": "^1.0.1",
+    "react-native-webview": "^10.2.3",
+    "react-redux": "^7.2.0",
+    "redux": "^4.0.5",
+    "redux-persist": "^6.0.0",
+    "rmc-date-picker": "^6.0.10",
+    "util": "^0.12.3",
+    "yup": "^0.28.5"
+  },
+  "devDependencies": {
+    "@babel/core": "~7.9.0",
+    "babel-jest": "~25.2.6",
+    "husky": "^4.2.5",
+    "jest": "~25.2.6",
+    "prettier-standard": "^16.3.0",
+    "react-test-renderer": "~16.9.0"
+  },
+  "jest": {
+    "preset": "react-native"
+  },
+  "private": true
+}
